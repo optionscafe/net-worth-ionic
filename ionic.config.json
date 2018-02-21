@@ -1,6 +1,6 @@
 {
-  "name": "net-worth-ionic",
-  "app_id": "",
+  "name": "Networth",
+  "app_id": "com.cloudmanic.networth",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
