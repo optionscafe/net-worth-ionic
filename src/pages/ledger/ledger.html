@@ -3,30 +3,31 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Accounts</ion-title>
+    <ion-title>Ledger</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Accounts</h3>
+
+  <h3>Ledger</h3>
 
 
   <ion-grid>
     <ion-row class="header">
-      <ion-col><b>Name</b></ion-col>
-      <ion-col><b>Balance</b></ion-col>
-      <ion-col><b>Units</b></ion-col>  
-      <ion-col><b>Updated</b></ion-col>            
+      <ion-col><b>Date</b></ion-col>
+      <ion-col><b>Account</b></ion-col>
+      <ion-col><b>Category</b></ion-col>  
+      <ion-col><b>Amount</b></ion-col>
+      <ion-col><b>Note</b></ion-col>                  
     </ion-row>
 
-    <ion-row *ngFor="let row of accounts">
-      <ion-col title="Account Id: {{ row.Id }}">{{ row.Name }}</ion-col>
+<!--     <ion-row *ngFor="let row of accounts">
+      <ion-col title="Ledger Id: {{ row.Id }}">{{ row.Name }}</ion-col>
       <ion-col>{{ row.Balance | currency:'USD':'symbol':'1.2-2' }}</ion-col>
       <ion-col>{{ row.Units | number:'1.2-2' }}</ion-col>  
       <ion-col>{{ row.UpdatedAt | date:'shortDate' }}</ion-col> 
-    </ion-row>
+    </ion-row> -->
         
   </ion-grid>
-
 
 </ion-content>

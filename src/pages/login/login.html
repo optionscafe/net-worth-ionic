@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Net Worth Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" autocomplete="off">  
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" name="email" value="" required email ngModel></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" name="password" value="" minlength="6" required ngModel></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button class="submit-btn" full type="submit" [disabled]="! f.form.valid">
+          {{ submitBtn }}
+        </button>
+      </ion-item>
+
+    </ion-list>
+
+  </form>
+ 
+</ion-content>
