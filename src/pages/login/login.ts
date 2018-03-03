@@ -12,13 +12,6 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Environment } from '../../environments/environment';
 
 interface LoginResponse {
-  id: number,
-  first_name: string,
-  last_name: string, 
-  session: SessionResponse
-}
-
-interface SessionResponse {
   access_token: string
 }
 
@@ -44,14 +37,18 @@ export class LoginPage
     // Update submit button
     this.submitBtn = "Logging In...";
 
+    // Add oauth stuff
+    form.value.grant_type = "password"
+    form.value.client_id = Environment.clientId
+
     // Make the the HTTP request:
-    this.http.post<LoginResponse>(Environment.app_server + '/login', form.value).subscribe(
+    this.http.post<LoginResponse>(Environment.appServer + '/oauth/token', form.value).subscribe(
       
       // Success
       data => {
         
         // // Store access token in local storage. 
-        localStorage.setItem('access_token', data.session.access_token); 
+        localStorage.setItem('access_token', data.access_token); 
         
         // Redirect to the home page
         this.navCtrl.setRoot(HomePage);

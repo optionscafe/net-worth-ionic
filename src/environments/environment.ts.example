@@ -1,4 +1,5 @@
 export const Environment = {
   production: false,
-  app_server: "http://localhost:9090"   
+  clientId: "",
+  appServer: "http://localhost:9090"   
 };

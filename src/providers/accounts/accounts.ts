@@ -23,7 +23,7 @@ export class AccountsProvider {
   // Get Accounts
   //
   get() : Observable<Account[]> {
-    return this.http.get<Account[]>(Environment.app_server + '/api/v1/accounts').map(
+    return this.http.get<Account[]>(Environment.appServer + '/api/v1/accounts').map(
       (data) => { return Account.buildForEmit(data); 
     });
   }
