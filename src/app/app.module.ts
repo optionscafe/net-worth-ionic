@@ -12,6 +12,7 @@ import { LoginPage } from '../pages/login/login';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AccountsProvider } from '../providers/accounts/accounts';
+import { LedgersProvider } from '../providers/ledgers/ledgers';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AccountsProvider } from '../providers/accounts/accounts';
     SplashScreen,
     AccountsProvider,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true } 
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    LedgersProvider 
   ]
 })
 export class AppModule {}

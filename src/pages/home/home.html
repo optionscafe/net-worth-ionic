@@ -7,26 +7,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Accounts</h3>
+<ion-content>
 
+  <ion-list>
+    <ion-item *ngFor="let row of accounts">
 
-  <ion-grid>
-    <ion-row class="header">
-      <ion-col><b>Name</b></ion-col>
-      <ion-col><b>Balance</b></ion-col>
-      <ion-col><b>Units</b></ion-col>  
-      <ion-col><b>Updated</b></ion-col>            
-    </ion-row>
+      <ion-row>
+        <ion-col><b>{{ row.Name }}</b></ion-col>
+        <ion-col text-right>{{ row.Balance | currency:'USD':'symbol':'1.2-2' }}</ion-col> 
+      </ion-row>
 
-    <ion-row *ngFor="let row of accounts">
-      <ion-col title="Account Id: {{ row.Id }}">{{ row.Name }}</ion-col>
-      <ion-col>{{ row.Balance | currency:'USD':'symbol':'1.2-2' }}</ion-col>
-      <ion-col>{{ row.Units | number:'1.2-2' }}</ion-col>  
-      <ion-col>{{ row.UpdatedAt | date:'shortDate' }}</ion-col> 
-    </ion-row>
-        
-  </ion-grid>
+      <ion-row>
+        <ion-col><i>As of {{ row.UpdatedAt | date:'shortDate' }}</i></ion-col>
+      </ion-row>
+
+    </ion-item> 
+  </ion-list>  
 
 
 </ion-content>

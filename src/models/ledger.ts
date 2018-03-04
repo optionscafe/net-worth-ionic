@@ -4,25 +4,24 @@
 // Copyright: 2018 Cloudmanic Labs, LLC. All rights reserved.
 //
 
-export class Account {
+export class Ledger {
   
   //
   // Construct.
   //
   constructor(
     public Id: number,
-    public Name: string,
-    public AccountNumber: string,
-    public Balance: number,
-    public Units: number,
-    public CreatedAt: Date, 
-    public UpdatedAt: Date        
+    public Date: Date,    
+    public AccountName: string,
+    public CategoryName: string,
+    public Amount: number,
+    public Note: string     
   ){}
-
+ 
   //
   // Build object for emitting to the app.
   //
-  public static buildForEmit(data) : Account[]  
+  public static buildForEmit(data) : Ledger[]  
   {
     let result = [];
 
@@ -33,14 +32,13 @@ export class Account {
 
     for(let i = 0; i < data.length; i++)
     {
-      result.push(new Account(
+      result.push(new Ledger(
         data[i].id,
-        data[i].name,
-        data[i].account_number,
-        data[i].balance,
-        data[i].units,
-        new Date(data[i].created_at),
-        new Date(data[i].updated_at)
+        new Date(data[i].date),
+        data[i].account_name,
+        data[i].category_name,
+        data[i].amount,
+        data[i].note
       ));
     }
 

@@ -7,27 +7,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  <h3>Ledger</h3>
+  <ion-list>
+    <ion-item *ngFor="let row of ledgers">
 
+      <ion-row>
+        <ion-col><b>{{ row.AccountName }}</b></ion-col>
+        <ion-col text-right>{{ row.Amount | currency:'USD':'symbol':'1.2-2' }}</ion-col> 
+      </ion-row>
 
-  <ion-grid>
-    <ion-row class="header">
-      <ion-col><b>Date</b></ion-col>
-      <ion-col><b>Account</b></ion-col>
-      <ion-col><b>Category</b></ion-col>  
-      <ion-col><b>Amount</b></ion-col>
-      <ion-col><b>Note</b></ion-col>                  
-    </ion-row>
+      <ion-row>
+        <ion-col> 
+          <ion-badge color="{{ getCatColor(row) }}">{{ row.CategoryName }}</ion-badge>
+        </ion-col>
+        <ion-col text-right>{{ row.Date | date:'shortDate' }}</ion-col>
+      </ion-row>
 
-<!--     <ion-row *ngFor="let row of accounts">
-      <ion-col title="Ledger Id: {{ row.Id }}">{{ row.Name }}</ion-col>
-      <ion-col>{{ row.Balance | currency:'USD':'symbol':'1.2-2' }}</ion-col>
-      <ion-col>{{ row.Units | number:'1.2-2' }}</ion-col>  
-      <ion-col>{{ row.UpdatedAt | date:'shortDate' }}</ion-col> 
-    </ion-row> -->
-        
-  </ion-grid>
+      <ion-row>
+        <ion-col><i>{{ row.Note }}</i></ion-col>
+      </ion-row>
+
+    </ion-item> 
+  </ion-list> 
 
 </ion-content>
