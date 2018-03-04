@@ -82,6 +82,17 @@ export class LedgerPage
 
     return this.colorsMap[row.CategoryName];
   }
+
+  //
+  // Pull refresh 
+  //
+  doRefresh(refresher) {
+    this.getLedgers();
+
+    setTimeout(() => {
+      refresher.complete();    
+    }, 500);
+  }  
 }
 
 /* End File */

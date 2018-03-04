@@ -37,6 +37,17 @@ export class HomePage {
     });
   } 
 
+  //
+  // Pull refresh 
+  //
+  doRefresh(refresher) {
+    this.getAccounts();
+
+    setTimeout(() => {
+      refresher.complete();    
+    }, 500);
+  }  
+
 }
 
 /* End File */
