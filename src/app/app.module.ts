@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LedgerPage } from '../pages/ledger/ledger';
 import { LoginPage } from '../pages/login/login';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,7 +20,8 @@ import { LedgersProvider } from '../providers/ledgers/ledgers';
     MyApp,
     HomePage,
     LedgerPage,
-    LoginPage
+    LoginPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { LedgersProvider } from '../providers/ledgers/ledgers';
     MyApp,
     HomePage,
     LedgerPage,
-    LoginPage
+    LoginPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
