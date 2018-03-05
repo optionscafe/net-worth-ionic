@@ -5,16 +5,17 @@
 //
 
 import { Account } from '../../models/account';
+import { AccountPage } from './account';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AccountsProvider} from '../../providers/accounts/accounts';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-accounts',
+  templateUrl: 'accounts.html'
 })
 
-export class HomePage {
+export class AccountsPage {
 
   accounts: Account[]
 
@@ -47,6 +48,13 @@ export class HomePage {
       refresher.complete();    
     }, 500);
   }  
+
+  //
+  // Account row click
+  //
+  accountRowClick(row: Account) {
+    this.navCtrl.push(AccountPage, row);
+  }
 
 }
 

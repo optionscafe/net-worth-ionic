@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Accounts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+ <ion-refresher (ionRefresh)="doRefresh($event)" padding>
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles" refreshingText="Refreshing..."></ion-refresher-content>
+  </ion-refresher>  
+
+  <ion-list>
+    <button ion-item *ngFor="let row of accounts" (click)="accountRowClick(row)">
+
+      <ion-row>
+        <ion-col><b>{{ row.Name }}</b></ion-col>
+        <ion-col text-right>{{ row.Balance | currency:'USD':'symbol':'1.2-2' }}</ion-col> 
+      </ion-row>
+
+      <ion-row>
+        <ion-col><i>As of {{ row.UpdatedAt | date:'shortDate' }}</i></ion-col>
+      </ion-row>
+
+    </button> 
+  </ion-list>  
+
+
+</ion-content>

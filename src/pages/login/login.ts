@@ -6,7 +6,7 @@
 
 import { Component } from '@angular/core';
 import { NgForm }   from '@angular/forms';
-import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 import { NavController, ActionSheetController } from 'ionic-angular';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Environment } from '../../environments/environment';
@@ -51,7 +51,7 @@ export class LoginPage
         localStorage.setItem('access_token', data.access_token); 
         
         // Redirect to the home page
-        this.navCtrl.setRoot(HomePage);
+        this.navCtrl.setRoot(TabsPage);
       },
       
       // Error

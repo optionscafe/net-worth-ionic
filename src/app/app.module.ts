@@ -5,7 +5,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '../providers/http/token.interceptor';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { AccountPage } from '../pages/accounts/account';
+import { AccountsPage } from '../pages/accounts/accounts';
 import { LedgerPage } from '../pages/ledger/ledger';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -18,7 +19,8 @@ import { LedgersProvider } from '../providers/ledgers/ledgers';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    AccountPage,
+    AccountsPage,
     LedgerPage,
     LoginPage,
     TabsPage
@@ -31,7 +33,8 @@ import { LedgersProvider } from '../providers/ledgers/ledgers';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    AccountPage,
+    AccountsPage,
     LedgerPage,
     LoginPage,
     TabsPage
